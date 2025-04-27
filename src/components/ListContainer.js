@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import '../App.css';
 import listdata from '../list';
 
-export default function ListContainer({sortOrder, filterOrder, lightDarkButton, newIncident,setShowForm,setFormSelect}) {
+export default function ListContainer({sortOrder, filterOrder, lightDarkButton, newIncident,setShowForm,setFormSelect,setFormErrors}) {
   const [list, setList] = useState(listdata);
   const [finalList,setFinalList]=useState(list);
   const [description, setDescription] = useState(null);
@@ -14,12 +14,18 @@ export default function ListContainer({sortOrder, filterOrder, lightDarkButton, 
 
   useEffect(() => {
     if (newIncident !== false) {
+      if(newIncident.title===""||newIncident.description===""){
+        setFormErrors("Title and description are required!");
+      }
+      else{
       setList((prevList) => [...prevList, newIncident]);
       setShowForm(false);
       setFormSelect("Low");
+      setFormErrors('');
+      }
     }
     
-  }, [newIncident,setShowForm,setFormSelect]); 
+  }, [newIncident,setShowForm,setFormSelect,setFormErrors]); 
   
  
 
