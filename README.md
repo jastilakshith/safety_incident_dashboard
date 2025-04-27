@@ -45,11 +45,15 @@ The list expansion uses CSS transitions for a smooth animation when an incident 
 4. Dynamic Data Handling
 The app is designed to be flexible, so it can easily accommodate dynamic changes to the incident data (loaded from listdata.js).
 
-## Optional: Challenges Faced
-Smooth Transition Effect:
+## Challenges Faced
+1. Smooth Transition Effect:
 
 Implementing the smooth transition effect for expanding and collapsing list items posed a challenge due to the need to use CSS max-height, which doesn't work well with auto. A fixed max-height was used for smooth animation.
 
-Responsive Adjustments:
+2. Responsive Adjustments:
 
 Adjusting the responsiveness for mobile screens took some time due to the need to balance readability with compactness on smaller devices.
+
+3. Struggles with advanced CSS:
+
+Faced some issues during the debugging of some advanced CSS code
