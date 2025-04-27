@@ -10,6 +10,7 @@ function App() {
   const nameinputRef = useRef(null);
   const descriptionRef=useRef(null);
   const [formSelect,setFormSelect]=useState("Low");
+  const [formerrors,setFormErrors]=useState('');
 
   const [showForm, setShowForm] = useState(false);
   const [newIncident,setNewIncident]=useState(null);
@@ -75,7 +76,7 @@ function App() {
         <div className="form-content">
           <h2>Enter the incident details</h2>
             <input type="text" ref={nameinputRef} placeholder="Title" />
-            <textarea placeholder='Description...' ref={descriptionRef}>Description...</textarea>
+            <textarea placeholder='Description...' ref={descriptionRef}></textarea>
             <br />
             <span>Severity:</span>
             <select className='formselect' onChange={formSelectHandler}>
@@ -84,6 +85,7 @@ function App() {
             <option value="High">High</option>
             </select>
             <br />
+            <span style={{color:'red'}}>{formerrors}</span>
             <button type="submit" className={`formbuttons${lightDarkButton}`} onClick={handleSubmit}>Submit</button>
           <button className={`formbuttons${lightDarkButton}`} onClick={handleClose}>Close</button>
         </div>
@@ -112,7 +114,7 @@ function App() {
       <button className={`reportbutton${lightDarkButton}`} onClick={handleClick}>Report an incident</button>
       <button className={`lightdarktogglebutton${lightDarkButton}`} onClick={lightDarkButtonHandler}>{lightDarkButton}</button>
     </div>
-    <ListContainer sortOrder={sortOrder} filterOrder={filterOrder} lightDarkButton={lightDarkButton} newIncident={addedIncident? newIncident:false} setShowForm={setShowForm} setFormSelect={setFormSelect}/>
+    <ListContainer sortOrder={sortOrder} filterOrder={filterOrder} lightDarkButton={lightDarkButton} newIncident={addedIncident? newIncident:false} setShowForm={setShowForm} setFormSelect={setFormSelect} setFormErrors={setFormErrors}/>
     </div>
   );
 }
