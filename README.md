@@ -26,3 +26,19 @@ Make sure you have **Node.js** and **npm** installed. If not, install Node.js fr
    ```bash
    git clone https://github.com/jastilakshith/safety_incident_dashboard
    cd safety_incident_dashboard
+2. **Start the Development Server**
+   Once the dependencies are installed, start the development server with:
+   ```bash
+   npm start
+The application will be available at http://localhost:3000.
+3. **Folder Structure**
+   Here’s an overview of the project’s folder structure:
+   ```bash
+   /src
+   /components
+    ListContainer.js  # Component for displaying list of incidents
+   App.css             # Main styling for the app
+   App.js              # Main React component that contains the layout
+   index.js            # Entry point of the application
+                 
+   list.js         # Data file containing the incident data
