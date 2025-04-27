@@ -31,14 +31,25 @@ Make sure you have **Node.js** and **npm** installed. If not, install Node.js fr
    ```bash
    npm start
 The application will be available at http://localhost:3000.
-3. **Folder Structure**
-   Here’s an overview of the project’s folder structure:
-   ```bash
-   /src
-   /components
-    ListContainer.js  # Component for displaying list of incidents
-   App.css             # Main styling for the app
-   App.js              # Main React component that contains the layout
-   index.js            # Entry point of the application
-                 
-   list.js         # Data file containing the incident data
+
+##Design Decisions & Challenges
+1. State Management
+The app uses React's useState hook to manage the state of the incident list, expanded view, and button states.
+
+2. Responsive Design
+Media queries are used to adjust the font size and layout for smaller screen sizes, specifically targeting mobile devices like the iPhone SE.
+
+3. Transition Effects
+The list expansion uses CSS transitions for a smooth animation when an incident is expanded or collapsed.
+
+4. Dynamic Data Handling
+The app is designed to be flexible, so it can easily accommodate dynamic changes to the incident data (loaded from listdata.js).
+
+Optional: Challenges Faced
+Smooth Transition Effect:
+
+Implementing the smooth transition effect for expanding and collapsing list items posed a challenge due to the need to use CSS max-height, which doesn't work well with auto. A fixed max-height was used for smooth animation.
+
+Responsive Adjustments:
+
+Adjusting the responsiveness for mobile screens took some time due to the need to balance readability with compactness on smaller devices.
