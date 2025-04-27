@@ -48,12 +48,13 @@ The app is designed to be flexible, so it can easily accommodate dynamic changes
 ## Challenges Faced
 1. Smooth Transition Effect:
 
-Implementing the smooth transition effect for expanding and collapsing list items posed a challenge due to the need to use CSS max-height, which doesn't work well with auto. A fixed max-height was used for smooth animation.
+  Implementing the smooth transition effect for expanding and collapsing list items posed a challenge due to the need to use CSS max-height, which doesn't work well with 
+  auto. A fixed max-height was used for smooth animation.
 
 2. Responsive Adjustments:
 
-Adjusting the responsiveness for mobile screens took some time due to the need to balance readability with compactness on smaller devices.
+  Adjusting the responsiveness for mobile screens took some time due to the need to balance readability with compactness on smaller devices.
 
 3. Struggles with advanced CSS:
 
-Faced some issues during the debugging of some advanced CSS code
+  Faced some issues during the debugging of some advanced CSS code
