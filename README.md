@@ -26,6 +26,7 @@ Make sure you have **Node.js** and **npm** installed. If not, install Node.js fr
    ```bash
    git clone https://github.com/jastilakshith/safety_incident_dashboard
    cd safety_incident_dashboard
+   npm i
 2. **Start the Development Server**
    Once the dependencies are installed, start the development server with:
    ```bash
