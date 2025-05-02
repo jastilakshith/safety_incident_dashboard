@@ -19,9 +19,12 @@ export default function ListContainer({sortOrder, filterOrder, lightDarkButton, 
       }
       else{
       setList((prevList) => [...prevList, newIncident]);
-      setShowForm(false);
-      setFormSelect("Low");
-      setFormErrors('');
+      setFormErrors("Success!");
+      setTimeout(()=>{
+        setShowForm(false);
+        setFormSelect("Low");
+        setFormErrors('');
+      },2000);
       }
     }
     
@@ -76,6 +79,7 @@ export default function ListContainer({sortOrder, filterOrder, lightDarkButton, 
         <li key={index} className={`${expandedItem === index ? listClass : 'listcollapsed'}${lightDarkButton}`}>
           <div className="listtopcontainer">
             <h2>{item.title}</h2>
+            <div className="listsubcontainer">
             <h4 style={{
               color: item.severity === "Low" ? "green" : item.severity === "Medium" ? "#ebb81c" : item.severity === "High" ? "red" : "black"
             }}>
@@ -83,6 +87,7 @@ export default function ListContainer({sortOrder, filterOrder, lightDarkButton, 
             </h4>
             <h4>Reported Date: {item.report_date}</h4>
             <button className={`${expandedItem === index ? buttonClass : 'buttonunclicked'}${lightDarkButton}`} onClick={() => handleClick(index, item.description)}>{expandedItem === index? buttonValue:"View"}</button>
+            </div>
           </div>
           {expandedItem === index && <div className='description'><p><h4>Description:</h4>{description}</p></div>}
         </li>
@@ -90,3 +95,4 @@ export default function ListContainer({sortOrder, filterOrder, lightDarkButton, 
     </div>
   );
 }
+
