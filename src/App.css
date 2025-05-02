@@ -97,7 +97,7 @@ h2{
 .listtopcontainer{
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .listcontainer{
@@ -107,6 +107,13 @@ h2{
   flex-direction: column;
   justify-content: space-around;
 }
+
+.listsubcontainer{
+  display: flex;
+  justify-content: space-between;
+  width: 40vw;
+}
+
 
 .buttonunclickedlight{
   border-radius: 1vh;
@@ -268,8 +275,18 @@ p{
   align-items: center;
 }
 
-.form-content {
+.form-contentlight {
   background-color: white;
+  padding: 5vh;
+  border-radius: 5vh;
+  width: 25vw;
+  border:solid #d6d6d6 6px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 20px 0 rgba(0, 0, 0, 0.19);
+  
+}
+
+.form-contentdark {
+  background-color: gray;
   padding: 5vh;
   border-radius: 5vh;
   width: 25vw;
@@ -295,6 +312,31 @@ p{
   background-color: #d6d6d6;
 }
 
+.formbuttonsdark{
+  color: white;
+  border: none;
+  background-color:#244a4a;
+  border-radius: 1vh;
+  height: 5vh;
+  width: 5vw;
+  margin-right: 1vh;
+  transition: .3s;
+}
+
+.formbuttonsdark:hover{
+  background-color: #d6d6d6;
+  color: black;
+}
+
+.formh1dark,.formspandark{
+  color: white;
+}
+
+.formselectlight,.formselectdark{
+  background-color: #d6d6d6;
+  border-radius:5vh;
+}
+
 input{
   width: 20vw;
   background-color: #d6d6d6;
@@ -305,6 +347,7 @@ input{
 }
 
 textarea{
+  resize: none;
   width: 20vw;
   background-color: #d6d6d6;
   border: none;
@@ -318,6 +361,30 @@ span{
 
 .formselect{
   margin-bottom: 2vh;
+}
+
+.submiterrorlight{
+  display: block;
+  font-weight: bold;
+  color: red;
+}
+
+.submiterrordark{
+  display: block;
+  font-weight: bold;
+  color: rgb(164 0 0);
+}
+
+.submitsuccesslight{
+  display: block;
+  font-weight: bold;
+  color: green;
+}
+
+.submitsuccessdark{
+  display: block;
+  font-weight: bold;
+  color: rgb(1, 59, 1);
 }
 
 
@@ -339,27 +406,36 @@ span{
     height: max-content;
   }
 
-  .buttonclicked{
+  .buttonclickedlight{
     height: max-content;
     width: 20vw;
+    border-radius: 0.6vh;
   }
 
-  .buttonunclicked{
+  .buttonunclickedlight{
     height: max-content;
     width: 20vw;
+    border-radius: 0.6vh;
+  }
+
+  .buttonclickeddark{
+    height: max-content;
+    width: 20vw;
+    border-radius: 0.6vh;
+  }
+
+  .buttonunclickeddark{
+    height: max-content;
+    width: 20vw;
+    border-radius: 0.6vh;
   }
 
   .lightdarkbutton{
     display: none;
   }
 
-  .form-content {
-    background-color: white;
-    padding: 5vh;
-    border-radius: 5vh;
+  .form-contentlight,.form-contentdark {
     width: 55vw;
-    border:solid #d6d6d6 6px;
-    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 20px 0 rgba(0, 0, 0, 0.19);
     
   }
 
@@ -380,16 +456,35 @@ span{
     border-radius: 1vh;
   }
 
-  .formbuttonslight{
-    color: white;
-    border: none;
-    background-color: #30a8a8;
-    border-radius: 1vh;
-    height: 5vh;
-    width: 14vw;
-    margin-right: 1vh;
-    transition: .3s;
+  .formbuttonslight, .formbuttonsdark{
+    width: 12.5vw;
+    height: 4vh;
+  }
+
+
+  .sortingselect{
+    width: 11.3vw;
+  }
+
+  .filterselect{
+    width:13.1vw;
+  }
+
+  .reportbuttonlight{
+    width: 30vw;
+  }
+
+  .lightdarktogglebuttonlight{
+    width: 15vw;
+  }
+  .reportbuttondark{
+    width: 30vw;
+  }
+
+  .lightdarktogglebuttondark{
+    width: 15vw;
   }
 
 }
+
 
