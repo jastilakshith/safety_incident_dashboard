@@ -43,6 +43,8 @@ function App() {
   }
 
   function handleSubmit(e){
+    let today = new Date();
+    today = today.toISOString().split('T')[0];
     e.preventDefault();
     setAddedIncident(true);
     setNewIncident({
@@ -50,7 +52,7 @@ function App() {
       title:nameinputRef.current.value,
       description:descriptionRef.current.value,
       severity:formSelect,
-      report_date: "2025-05-3"
+      report_date: today
     });
 
   }
@@ -73,21 +75,21 @@ function App() {
 
     {showForm && (
       <div className="form-modal">
-        <div className="form-content">
-          <h2>Enter the incident details</h2>
+        <div className={`form-content${lightDarkButton}`}>
+          <h2 className={`formh1${lightDarkButton}`}>Enter the incident details</h2>
             <input type="text" ref={nameinputRef} placeholder="Title" />
             <textarea placeholder='Description...' ref={descriptionRef}></textarea>
             <br />
-            <span>Severity:</span>
-            <select className='formselect' onChange={formSelectHandler}>
+            <span className={`formspan${lightDarkButton}`}>Severity:</span>
+            <select className={`formselect formselect${lightDarkButton}`} onChange={formSelectHandler}>
             <option value="Low">Low</option>
             <option value="Medium">Medium</option>
             <option value="High">High</option>
             </select>
             <br />
-            <span style={{color:'red'}}>{formerrors}</span>
-            <button type="submit" className={`formbuttons${lightDarkButton}`} onClick={handleSubmit}>Submit</button>
-          <button className={`formbuttons${lightDarkButton}`} onClick={handleClose}>Close</button>
+            <span className={`${formerrors==="Title and description are required!"?"submiterror":"submitsuccess"}${lightDarkButton}`}>{formerrors}</span>
+            <button className={`formbuttons formbuttons${lightDarkButton}`} type="submit" onClick={handleSubmit}>Submit</button>
+          <button className={`formbuttons formbuttons${lightDarkButton}`} onClick={handleClose}>Close</button>
         </div>
       </div>
     )}
@@ -96,7 +98,7 @@ function App() {
     <div className="utilitiescontainer">
       <div className="sortcontainer">
         <h3>Sort by: </h3>
-     <select className={`utilitybuttons${lightDarkButton}`} onChange={sortChangeHandler}>
+     <select className={`sortingselect utilitybuttons${lightDarkButton}`} onChange={sortChangeHandler}>
         <option>Default</option>
         <option value="Newestfirst">Newest first</option>
         <option value="Oldestfirst">Oldest first</option>
@@ -104,7 +106,7 @@ function App() {
       </div>
       <div className="filtercontainer">
         <h3>Filter: </h3>
-      <select className={`utilitybuttons${lightDarkButton}`} onChange={filterChangeHandler}>
+      <select className={`filterselect utilitybuttons${lightDarkButton}`} onChange={filterChangeHandler}>
         <option value="All">All</option>
         <option value="Low">Low</option>
         <option value="Medium">Medium</option>
@@ -120,3 +122,4 @@ function App() {
 }
 
 export default App;
+
